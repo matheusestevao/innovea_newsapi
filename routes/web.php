@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewsapiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::controller(NewsapiController::class)->group(function () {
+    Route::get('/', 'index')->name('newsapi.index');
+    Route::get('everything', 'everything')->name('newsapi.everything');
+    Route::get('top-headlines', 'topHeadlines')->name('newsapi.top_headlines');
+    Route::get('top-headlines/sources', 'topHeadlinesSources')->name('top_headlines_sources');
 });
