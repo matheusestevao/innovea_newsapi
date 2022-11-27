@@ -3,7 +3,9 @@
 namespace  App\Services;
 
 use App\Models\ArticleClassification;
+use App\Models\Category;
 use App\Models\Language;
+use App\Models\SearchIn;
 use App\Models\Source;
 use Illuminate\Support\Facades\Http;
 
@@ -22,6 +24,16 @@ class NewsapiService
     public function setSources()
     {
         return Source::orderBy('name', 'asc')->get();
+    }
+
+    public function setSearchIns()
+    {
+        return SearchIn::orderBy('name', 'asc')->get();
+    }
+
+    public function setCategories()
+    {
+        return Category::orderBy('name', 'asc')->get();
     }
 
     public function getEverything(

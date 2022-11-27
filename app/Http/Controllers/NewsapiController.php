@@ -22,12 +22,16 @@ class NewsapiController extends Controller
         $sources = $this->newsapi->setSources();
         $languages = $this->newsapi->setLanguages();
         $articleClassifications = $this->newsapi->setArticleClassifications();
+        $searchIns = $this->newsapi->setSearchIns();
+        $categories = $this->newsapi->setCategories();
 
         return view('articles.index', 
                 compact(
                     'sources', 
                     'languages', 
-                    'articleClassifications'
+                    'articleClassifications',
+                    'searchIns',
+                    'categories',
                 )
             );
     }
@@ -44,6 +48,6 @@ class NewsapiController extends Controller
 
     public function topHeadlinesSources(NewsapiTopHeadlinesSourcesRequest $request)
     {
-        return $this->newsapi->getTopHeadlines(... $request->validated());
+        return $this->newsapi->getTopHeadlinesSources(... $request->validated());
     }
 }

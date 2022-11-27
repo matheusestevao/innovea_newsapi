@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             LanguageSeeder::class,
             SourceSeeder::class,
+            SearchInSeeder::class
         ]);
     }
 }

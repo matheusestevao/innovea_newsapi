@@ -21,6 +21,7 @@ class LanguageSeeder extends Seeder
         'pt' => 'portuguese',
         'ru' => 'russian',
         'sv' => 'swedish',
+        'ud' => 'urdu',
         'zh' => 'chinese',
     ];
 
