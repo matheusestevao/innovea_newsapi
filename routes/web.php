@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(NewsapiController::class)->group(function () {
     Route::get('/', 'index')->name('newsapi.index');
-    Route::get('everything', 'everything')->name('newsapi.everything');
-    Route::get('top-headlines', 'topHeadlines')->name('newsapi.top_headlines');
-    Route::get('top-headlines/sources', 'topHeadlinesSources')->name('top_headlines_sources');
+    Route::post('everything', 'everything')->name('newsapi.everything');
+    Route::post('top-headlines', 'topHeadlines')->name('newsapi.top_headlines');
+    Route::post('top-headlines/sources', 'topHeadlinesSources')->name('newsapi.top_headlines_sources');
 });
